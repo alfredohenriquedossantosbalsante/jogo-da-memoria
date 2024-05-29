@@ -88,7 +88,7 @@ namespace jogo_da_memoria
                     tela[linha1, coluna1] = 0;
                     tela[linha2, coluna2] = 0;
                 }
-            } while (acertos < 8);
+            } while (acertos < 8);  
 
 
         }

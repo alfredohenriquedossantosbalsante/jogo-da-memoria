@@ -43,7 +43,7 @@ namespace jogo_da_memoria
             get { return _gameTime; }
             set
             {
-                _gameTime += value;
+                _gameTime += value; 
             }
         }
     }

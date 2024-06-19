@@ -4,11 +4,34 @@ namespace jogo_da_memoria
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void PrintMatrix(int[,] tela)
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                for (int k = 0; k < 4; k++)
+                {
+                    Console.Write(tela[j, k]);
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+static void Main(string[] args)
         {
             int[,] tela = new int[4, 4];
             int[,] jogo = new int[4, 4];
             int acertos = 0;
+            player p1 = new player("marques");
+            player p2 = new player("alfredo");
+
+            Console.WriteLine("nome: "+ p1.Name);
+            Console.WriteLine("pontuação: " + p1.Score);
+
+            Console.WriteLine(p1._name);
+            Console.WriteLine(p2._name);
+
+
+            Environment.Exit(0);
 
             int linha, coluna;
 
@@ -31,17 +54,10 @@ namespace jogo_da_memoria
             }
             do
             {
-                for (int j = 0; j < 4; j++)
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        Console.Write(tela[j, k]);
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine();
 
-                int linha1, coluna1;
+
+                Program.PrintMatrix(tela);
+                    int linha1, coluna1;
                 Console.WriteLine("entre com a linha[1, 4]");
                 linha1 = int.Parse(Console.ReadLine());
                 Console.WriteLine("entre com a coluna[1, 4]");
@@ -51,15 +67,7 @@ namespace jogo_da_memoria
                 coluna1--;
                 tela[linha1, coluna1] = jogo[linha1, coluna1];
 
-                for (int j = 0; j < 4; j++)
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        Console.Write(tela[j, k]);
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine();
+               Program.PrintMatrix(tela);
                 int linha2, coluna2;
                 Console.WriteLine("entre com a linha[1, 4]");
                 linha2 = int.Parse(Console.ReadLine());
@@ -69,15 +77,7 @@ namespace jogo_da_memoria
                 linha2--;
                 coluna2--;
                 tela[linha2, coluna2] = jogo[linha2, coluna2];
-                for (int j = 0; j < 4; j++)
-                {
-                    for (int k = 0; k < 4; k++)
-                    {
-                        Console.Write(tela[j, k]);
-                    }
-                    Console.WriteLine();
-                }
-                Console.WriteLine();
+               Program.PrintMatrix(tela);
 
                 if (tela[linha1, coluna1] == tela[linha2, coluna2])
                 {

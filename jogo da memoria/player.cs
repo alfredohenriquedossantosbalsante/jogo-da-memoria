@@ -15,9 +15,9 @@ namespace jogo_da_memoria
         TimeSpan _gameTime;
         public player(string name)
         {
-            _name = name;
-            _score = 0;
-            _gameTime = TimeSpan.FromSeconds(0);
+            Name = name;
+            Score = 0;
+            GameTime = TimeSpan.FromSeconds(0);
         }
         public string Name
         {
@@ -38,7 +38,7 @@ namespace jogo_da_memoria
                     _score += value;
             }
         }
-        public TimeSpan gametime
+        public TimeSpan GameTime
         {
             get { return _gameTime; }
             set
@@ -46,5 +46,13 @@ namespace jogo_da_memoria
                 _gameTime += value; 
             }
         }
+        public override string ToString()
+        {
+            return "Nome: " + Name +
+                "\nPontuação: " + Score +
+                $"\nTempo de partida:  {GameTime :hh\\:mm\\:ss}" +
+                "\nquantidade de jogadas: " + Name + ": "+ ;
+        }
+        
     }
 }

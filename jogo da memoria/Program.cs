@@ -21,8 +21,14 @@ static void Main(string[] args)
             int[,] tela = new int[4, 4];
             int[,] jogo = new int[4, 4];
             int acertos = 0;
-            player p1 = new player("marques");
-            player p2 = new player("alfredo");
+
+            Console.WriteLine("entre com o nome do player 1: ");
+            string namep1 = Console.ReadLine();
+            Console.WriteLine("entre com o nome do player 2: ");
+            string namep2 = Console.ReadLine();
+
+            player p1 = new player(namep1);
+            player p2 = new player(namep2);
 
             Console.WriteLine("nome: "+ p1.Name);
             Console.WriteLine("pontuação: " + p1.Score);
@@ -52,6 +58,19 @@ static void Main(string[] args)
                 }
 
             }
+
+            int jogador = gerador.Next(1, 3);
+
+            
+            if(jogador == 1)
+            {
+                Console.WriteLine(p1.Name+" é a sua vez.");
+            }
+            else
+            {
+                Console.WriteLine(p2.Name+" é a sua vez."); 
+            }
+            DateTime begin = DateTime.Now;
             do
             {
 
@@ -81,14 +100,39 @@ static void Main(string[] args)
 
                 if (tela[linha1, coluna1] == tela[linha2, coluna2])
                 {
+                    if(jogador == 1)
+                    {
+                        p1.Score = 1;
+                    }
+                    else
+                    {
+                        p2.Score = 1;
+                    }
                     acertos++;
+                    
                 }
                 else
                 {
+                    TimeSpan timeSpan = DateTime.Now - begin;
+
+                    if(jogador == 1)
+                    {
+                        p1.GameTime = timeSpan;
+                    }
+                    else
+                    {
+                        p2.GameTime = timeSpan;
+                    }
+                    
                     tela[linha1, coluna1] = 0;
                     tela[linha2, coluna2] = 0;
                 }
-            } while (acertos < 8);  
+                int jogadasp1, jogadasp2;
+                jogadasp1 = p1.Score
+
+            } while (acertos < 8);
+            Console.WriteLine(p1.ToString());
+            Console.WriteLine(p2.ToString());
 
 
         }

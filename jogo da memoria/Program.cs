@@ -21,6 +21,7 @@ static void Main(string[] args)
             int[,] tela = new int[4, 4];
             int[,] jogo = new int[4, 4];
             int acertos = 0;
+            int jogadasp1 = 0, jogadasp2 = 0;
 
             Console.WriteLine("entre com o nome do player 1: ");
             string namep1 = Console.ReadLine();
@@ -103,10 +104,12 @@ static void Main(string[] args)
                     if(jogador == 1)
                     {
                         p1.Score = 1;
+                        jogadasp1++;
                     }
                     else
                     {
                         p2.Score = 1;
+                        jogadasp2++;
                     }
                     acertos++;
                     
@@ -118,21 +121,27 @@ static void Main(string[] args)
                     if(jogador == 1)
                     {
                         p1.GameTime = timeSpan;
+                        jogadasp1++;
                     }
                     else
                     {
                         p2.GameTime = timeSpan;
+                        jogadasp2++;
                     }
                     
                     tela[linha1, coluna1] = 0;
                     tela[linha2, coluna2] = 0;
                 }
-                int jogadasp1, jogadasp2;
-                jogadasp1 = p1.Score
 
+                
+
+                
             } while (acertos < 8);
             Console.WriteLine(p1.ToString());
             Console.WriteLine(p2.ToString());
+            Console.WriteLine("o numero de jogadas do player 1 foi: " + jogadasp1); 
+            Console.WriteLine("o numero de jogadas do player 2 foi: " + jogadasp2);
+
 
 
         }

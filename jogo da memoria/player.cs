@@ -50,8 +50,8 @@ namespace jogo_da_memoria
         {
             return "Nome: " + Name +
                 "\nPontuação: " + Score +
-                $"\nTempo de partida:  {GameTime :hh\\:mm\\:ss}" +
-                "\nquantidade de jogadas: " + Name + ": "+ ;
+                $"\nTempo de partida:  {GameTime:hh\\:mm\\:ss}";
+
         }
         
     }

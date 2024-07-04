@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Matriz2024
+namespace jogo_da_memoria
 {
     internal class Player
     {

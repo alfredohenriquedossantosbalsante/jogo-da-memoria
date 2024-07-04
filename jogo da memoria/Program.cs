@@ -2,7 +2,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace Matriz2024
+namespace jogo_da_memoria
 {
     internal class Program
     {
@@ -71,11 +71,7 @@ namespace Matriz2024
             Console.WriteLine();
             do
             {
-                //Imprimir o nome do jogador da vez.
-                //if(jogador == 1)
-                //    Console.WriteLine(p1.Name);
-                //else
-                //    Console.WriteLine(p2.Name);
+               
 
                 Console.WriteLine("{0} É A SUA VEZ!",
                     jogador == 1 ? p1.Name : p2.Name);
